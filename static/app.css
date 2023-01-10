@@ -1,2 +1,25 @@
 /* Styling for MadLibs application. */
 
+body {
+    background-color: lightblue;
+}
+
+input {
+    width: 50%;
+    display: block;
+    padding: 5px 5px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: lightgreen;
+}
+
+#story-form {
+    margin: 0px 10px;
+}
+
