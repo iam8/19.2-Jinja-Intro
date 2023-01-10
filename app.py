@@ -4,6 +4,8 @@
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
+from stories import story
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "ceva_secreta"
 
@@ -16,7 +18,8 @@ def homepage():
     Display form for inputting missing words into a Madlibs story.
     """
 
-    return render_template("story_input.jinja2")
+    return render_template("story_input.jinja2",
+                           prompt_list=story.prompts)
 
 
 @app.route("/story")
@@ -25,7 +28,7 @@ def create_story():
     Display final story, with the missing words filled in by the user.
     """
 
-    name = request.args.get("name")
-    other_field = request.args.get("something")
+    final_story = story.generate(request.args)
 
-    return render_template("final_story.jinja2", name=name, something=other_field)
+    return render_template("final_story.jinja2",
+                           final_story=final_story)
