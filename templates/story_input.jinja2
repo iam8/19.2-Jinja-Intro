@@ -10,15 +10,13 @@
     <h1>MadLibs</h1>
 
     <form action="/story">
-        <label for="name">Name:</label>
-        <input type="text" name="name">
-        <br>
-        <br>
 
-        <label for="something">Some other field:</label>
-        <input type="text" name="something">
-        <br>
-        <br>
+        {% for prompt in prompt_list %}
+            <label for='{{ prompt }}'>{{ prompt }}:</label>
+            <input type="text" name='{{ prompt }}'>
+            <br>
+            <br>
+        {% endfor %}
 
         <button>Submit</button>
     </form>
