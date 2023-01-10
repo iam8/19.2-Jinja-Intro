@@ -8,7 +8,7 @@ Code for application - setup of Flask and definition of routes and view function
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import story, story2
+from stories import story2
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "ceva_secreta"
