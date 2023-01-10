@@ -10,13 +10,11 @@ The story input page allows the user to input words to fill in for a story. #}
 
     <h1>MadLibs</h1>
 
-    <form action="/story">
+    <form id="story-form" action="/story">
 
         {% for prompt in prompt_list %}
             <label for='{{ prompt }}'>{{ prompt }}:</label>
             <input type="text" name='{{ prompt }}'>
-            <br>
-            <br>
         {% endfor %}
 
         <button>Submit</button>
