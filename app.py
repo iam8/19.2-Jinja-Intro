@@ -16,7 +16,7 @@ def homepage():
     Display form for inputting missing words into a Madlibs story.
     """
 
-    return render_template("story_input.html")
+    return render_template("story_input.jinja2")
 
 
 @app.route("/story")
@@ -28,4 +28,4 @@ def create_story():
     name = request.args.get("name")
     other_field = request.args.get("something")
 
-    return render_template("final_story.html", name=name, something=other_field)
+    return render_template("final_story.jinja2", name=name, something=other_field)
