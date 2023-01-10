@@ -25,4 +25,7 @@ def create_story():
     Display final story, with the missing words filled in by the user.
     """
 
-    return render_template("final_story.html")
+    name = request.args.get("name")
+    other_field = request.args.get("something")
+
+    return render_template("final_story.html", name=name, something=other_field)
