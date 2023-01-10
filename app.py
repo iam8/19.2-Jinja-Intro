@@ -1,6 +1,10 @@
 # Ioana A Mititean
 # Exercise 19.2 - Flask Madlibs
 
+"""
+Code for application - setup of Flask and definition of routes and view functions.
+"""
+
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
