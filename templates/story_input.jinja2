@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{# <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,4 +22,24 @@
     </form>
 
 </body>
-</html>
+</html> #}
+
+{% extends 'base.jinja2' %}
+
+{% block title %}MadLibs: Home{% endblock %}
+
+{% block content %}
+    <h1>MadLibs</h1>
+
+    <form action="/story">
+
+        {% for prompt in prompt_list %}
+            <label for='{{ prompt }}'>{{ prompt }}:</label>
+            <input type="text" name='{{ prompt }}'>
+            <br>
+            <br>
+        {% endfor %}
+
+        <button>Submit</button>
+    </form>
+{% endblock %}
